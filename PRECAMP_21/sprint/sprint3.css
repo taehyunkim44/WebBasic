@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 670px;
+  height: 960px;
+  background: #ffffff;
+  border: 1px solid #aacdff;
+  box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  width: 466px;
+  height: 94px;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 47px;
+  color: #0068ff;
+}
+
+.email {
+  width: 466px;
+  height: 100px;
+}
+
+.emailText {
+  width: 158px;
+  height: 23.65px;
+}
+.name {
+  width: 466px;
+  height: 100px;
+}
+
+.pw {
+  width: 466px;
+  height: 100px;
+}
+
+.check {
+  width: 466px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 3px;
+}
+
+.checkText {
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.button {
+  width: 470px;
+  height: 100px;
+  background: #ffffff;
+  border: 1px solid #0068ff;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.buttonText {
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  color: #0068ff;
+}
+
+input[type="text"] {
+  width: 100%;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 1;
+  padding: 20px;
+}
