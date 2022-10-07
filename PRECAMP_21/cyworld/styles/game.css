@@ -95,28 +95,27 @@ body {
   height: 24px;
 }
 
-.lotto__bottom {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .lotto__box {
   width: 130px;
   height: 21px;
   background: #ffe400;
   border: 1px solid #000000;
   border-radius: 8px;
-  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 8px;
+  margin-top: 10px;
+  margin-bottom: 11px;
 }
 
-.button {
+.game__lotto__button {
   width: 62px;
   height: 24px;
   background: #ffffff;
   border: 1px solid #000000;
   border-radius: 5px;
+  font-size: 11px;
 }
