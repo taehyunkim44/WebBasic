@@ -23,10 +23,16 @@ function changeFocus3() {
 
 //인증 및 시간
 function buttonStart() {
-  document.getElementById("start").disabled = false;
-  document.getElementById("finish").disabled = false;
+  document.getElementById("start").disabled = true;
+  document.getElementById("finish").disabled = true;
   document.getElementById("target").innerHTML = "000000";
   document.getElementById("timer").innerHTML = "03:00";
+  document
+    .getElementById("start")
+    .setAttribute("style", "background-color:none;");
+  document
+    .getElementById("finish")
+    .setAttribute("style", "background-color:none;");
 }
 
 let isStarted = false;
@@ -64,7 +70,9 @@ function authComplete() {
   buttonStart();
   document.getElementById("finish").innerHTML = "인증완료";
   document.getElementById("buttonText").disabled = false;
-  document.getElementById("buttonText");
+  document
+    .getElementById("buttonText")
+    .setAttribute("style", "background-color:white;");
 }
 
 function signUpCheck() {
@@ -78,6 +86,21 @@ function signUpCheck() {
   let check = true;
 
   // 이메일 확인
+  if (email.includes("@")) {
+    let emailId = email.split("@")[0];
+    let emailServer = email.split("@")[1];
+    if (emailId === "" || emailServer === "") {
+      document.getElementById("emailError").innerHTML =
+        "이메일이 올바르지 않습니다.";
+      check = false;
+    } else {
+      document.getElementById("emailError").innerHTML = "";
+    }
+  } else {
+    document.getElementById("emailError").innerHTML =
+      "이메일이 올바르지 않습니다.";
+    check = false;
+  }
 
   // 이름 확인
   if (name === "") {
@@ -135,5 +158,8 @@ function signUpCheck() {
     document.getElementById("passwordCheckError").innerHTML = "";
     document.getElementById("areaError").innerHTML = "";
     document.getElementById("genderError").innerHTML = "";
+    signIn(function () {
+      alert("코드캠프 가입을 축하합니다.");
+    }, 0);
   }
 }
