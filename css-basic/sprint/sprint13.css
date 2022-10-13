@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  background: red;
+  width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  padding: 20px;
+}
+
+.container div {
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1,
+.box6 {
+  background: white;
+}
+
+.box2,
+.box4 {
+  background: yellow;
+  color: red;
+}
+
+.box3,
+.box5 {
+  background: green;
+  color: white;
+}
