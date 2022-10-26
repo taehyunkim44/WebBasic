@@ -35,34 +35,58 @@ function buttonStart() {
     .setAttribute("style", "background-color:none;");
 }
 
+// let isStarted = false;
+
+// let auth = () => {
+//   document.getElementById("finish").disabled = false;
+//   if (isStarted === false) {
+//     //타이머가 작동중이 아닐때
+//     isStarted = true;
+//     const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
+//     document.getElementById("target").innerText = token;
+//     document.getElementById("target").style.color = "#" + token;
+
+//     let time = 180;
+
+//     let timer = setInterval(function () {
+//       if (time >= 0) {
+//         let min = Math.floor(time / 60);
+//         let sec = String(time % 60).padStart(2, "0");
+//         document.getElementById("timer").innerText = min + ":" + sec;
+//         time = time - 1;
+//       } else {
+//         document.getElementById("finish").disabled = true;
+//         isStarted = false;
+//         clearInterval(timer);
+//       }
+//     }, 1000);
+//   } else {
+//     //타이머가 작동중 일 때
+//   }
+// };
+
 let isStarted = false;
 
-let auth = () => {
-  if (isStarted === false) {
-    //타이머가 작동중이 아닐때
-    isStarted = true;
-    document.getElementById("finish").disabled = false;
-    const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
-    document.getElementById("target").innerText = token;
-    document.getElementById("target").style.color = "#" + token;
+const auth = () => {
+  // 인증확인 버튼 활성화
+  document.getElementById("finish").disabled = false;
 
-    let time = 180;
-    let timer;
-
-    timer = setInterval(function () {
-      if (time >= 0) {
-        let min = Math.floor(time / 60);
-        let sec = String(time % 60).padStart(2, "0");
-        document.getElementById("timer").innerText = min + ":" + sec;
-        time = time - 1;
-      } else {
-        document.getElementById("finish").disabled = true;
-        isStarted = false;
-        console.log("타이머 작동중");
-        clearInterval(timer);
-      }
-    }, 1000);
-  }
+  if (isStarted !== false) clearInterval(isStarted);
+  const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
+  document.getElementById("target").innerText = token;
+  let time = 180;
+  processID = setInterval(function () {
+    if (time < 0 || document.getElementById("start").disabled) {
+      clearInterval(isStarted);
+      initButton();
+      return;
+    }
+    let mm = String(Math.floor(time / 60)).padStart(2, "0");
+    let ss = String(time % 60).padStart(2, "0");
+    let result = mm + ":" + ss;
+    document.getElementById("timer").innerText = result;
+    time--;
+  }, 1000);
 };
 
 function authComplete() {
